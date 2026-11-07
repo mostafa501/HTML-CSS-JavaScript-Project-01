@@ -1,6 +1,6 @@
 # HTML-CSS-JAVASCRIPT-PROJECT-01
 
-A responsive and interactive website developed using **HTML5**, **CSS3**, and **JavaScript** as part of my new projects.
+A responsive and interactive website developed using **HTML5**, **CSS3**, and **JavaScript** as part of my new web development projects.
 
 ## Project Overview
 
