@@ -1,0 +1,612 @@
+/* Start Variables */
+:root {
+    --main-color: #08796e;
+    --secondary-color: #2c4755;
+    --section-padding: 60px;
+    --section-background: #f6f6f6;
+    --main-duration: 0.5s;
+}
+
+/* End Variables */
+
+/* Start Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* to make scrolling snooth while browse */
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* incase of mobile (width=100%) */
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Global Rules */
+
+
+
+/* Start Components */
+.special-heading {
+    color: var(--secondary-color);
+    font-size: 100px;
+    text-align: center;
+    font-weight: 800;
+    letter-spacing: -3px;
+    margin: 0;
+}
+
+.special-heading+p {
+    margin: 8px 0 0;
+    font-size: 20px;
+    text-align: center;
+    color: #797979;
+}
+
+@media (max-width: 767px) {
+    .special-heading {
+        font-size: clamp(2.5rem, 12vw, 3.75rem);
+    }
+
+    .special-heading+p {
+        margin-top: 8px;
+    }
+}
+
+/* End Components */
+
+
+/* Start Header */
+.header {
+    padding: 20px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .wordmark {
+    color: var(--secondary-color);
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.header .links {
+    position: relative;
+}
+
+.header summary {
+    cursor: pointer;
+    padding: 8px;
+    font-weight: 700;
+}
+
+/* format the text of the ul (and all inside it) */
+.header .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    z-index: 1;
+}
+
+/* creating arrow to the top */
+.header .links ul::before {
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+
+/* format the links of each listed item */
+.header .links ul li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: var(--main-duration);
+}
+
+.header .links ul li a:hover {
+    padding-left: 25px;
+}
+
+.header .links ul li:not(:last-child) a {
+    border-bottom: 1px solid #ddd;
+}
+
+/* End Header */
+
+
+
+
+/* Start Landing Section */
+.landing {
+    background: linear-gradient(135deg, #effaf8, #d4ece9);
+    min-height: 65vh;
+    display: grid;
+    place-items: center;
+    padding: 48px 20px;
+}
+
+.landing .intro-text {
+    text-align: center;
+    max-width: 600px;
+}
+
+/* format of landing welcome title text */
+.landing .intro-text h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: clamp(2.25rem, 7vw, 3.5rem);
+    color: var(--main-color);
+}
+
+/* format of landing welcome paragraph text */
+.landing .intro-text p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* End Landing Section */
+
+
+
+/* Start Features */
+.features {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+
+/* make the col number automatic based on min width 300 */
+.features .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    grid-gap: 20px;
+}
+
+
+.features .feat {
+    padding: 20px;
+    text-align: center;
+}
+
+/* change color of icon */
+.features .feat i {
+    color: var(--main-color);
+}
+
+/* h3 format*/
+.features .feat h3 {
+    font-weight: 800;
+    margin: 30px 0;
+}
+
+/* p format*/
+.features .feat p {
+    line-height: 1.8;
+    color: #777;
+    font-size: 17px;
+}
+
+/* End Features */
+
+
+
+
+
+/* Start Services  */
+.services {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.services .services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    grid-gap: 30px;
+    margin-top: 100px;
+}
+
+.services .services-content .srv {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+    .services .services-content .srv {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.services .services-content .srv i {
+    color: var(--main-color);
+    flex-basis: 60px;
+}
+
+.services .services-content .srv .text {
+    flex: 1;
+}
+
+.services .services-content .srv .text h3 {
+    margin: 0 0 20px;
+}
+
+.services .services-content .srv .text p {
+    color: #444;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.services .services-content .image {
+    text-align: center;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* make i box shape behind the image */
+.services .services-content .image::before {
+    content: "";
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 100px);
+    top: -50px;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+/* hide the image in large screens */
+@media (max-width: 1199px) {
+    .image-column {
+        display: none;
+    }
+}
+
+/* End Services  */
+
+
+/* Similar to services section */
+
+/* Start Portfolio */
+.portfolio {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+
+.portfolio .portfolio-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    grid-gap: 30px;
+    margin-top: 80px;
+}
+
+.portfolio .portfolio-content .card  {
+    background-color: white;
+
+}
+
+.portfolio .portfolio-content .card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.portfolio .portfolio-content .card .info {
+    padding: 20px;
+}
+
+/* no need to margin here (make text controlled by padding only) */
+.portfolio .portfolio-content .card .info h3 {
+    margin: 0;
+}
+
+.portfolio .portfolio-content .card .info p {
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* End Portfolio */
+
+
+
+
+
+
+/* Start About */
+.about {
+    padding-top: var(--section-padding);
+    /* if we like to increase padding for image not to extend too much at the bottom */
+    padding-bottom: calc(var(--section-padding) + 60px);
+}
+
+/* this time we divide using flex not grid */
+.about .about-content {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 991px) {
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.about .about-content .image {
+    position: relative;
+    width: 250px;
+    height: 375px;
+}
+
+/* put the image in center (by margin auto) at this prespective */
+@media (max-width: 991px) {
+    .about .about-content .image {
+        margin: 0 auto 0x;
+    }
+}
+
+/* left  column shape */
+.about .about-content .image::before {
+    content: "";
+    position: absolute;
+    background-color: var(--secondary-color);
+    width: 100px;
+    height: calc(100% + 80px);
+    top: -40px;
+    left: -20px;
+    z-index: -1;
+}
+
+/* right L shape  */
+.about .about-content .image::after {
+    content: "";
+    top: -40px;
+    position: absolute;
+    width: 120px;
+    height: 300px;
+    border-left: 80px solid var(--main-color);
+    border-bottom: 80px solid var(--main-color);
+    z-index: -1;
+    right: -150px;
+}
+
+/* up to this width, dont display these shapes */
+@media (max-width: 991px) {
+
+    .about .about-content .image::before,
+    .about .about-content .image::after {
+        display: none;
+    }
+}
+
+/* this time we divide using flex not grid */
+.about .about-content .text {
+    flex-basis: calc(100% - 500px);
+}
+
+.about .about-content .image {
+    position: relative;
+    width: 320px;
+    max-width: 100%;
+    height: auto;
+}
+
+.about .about-content .image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 992px) {
+    .about .about-content .image {
+        margin-left: -12px;
+    }
+}
+
+@media (max-width: 991px) {
+    .about .about-content .image {
+        margin: 0 auto 24px;
+    }
+}
+
+/* End About */
+
+
+
+
+/* Start Contact */
+
+/* use the colors as in portfolio section */
+.contact {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: var(--section-background);
+}
+
+/* just padding is required to adjust text location */
+.contact .info {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    text-align: center;
+}
+
+.contact .info .label {
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--secondary-color);
+    letter-spacing: -2px;
+    margin-bottom: 15px;
+}
+
+.contact .info .link {
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-size: 35px;
+    font-weight: 800;
+    color: var(--main-color);
+    /* no underline required */
+    text-decoration: none;
+}
+
+
+/* reduce font of label & social incase of mobiles */
+@media (max-width: 767px) {
+
+    .contact .info .label,
+    .contact .info .link {
+        font-size: 25px;
+    }
+}
+
+/* End Contact */
+
+
+
+/* Start Footer */
+.footer {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer span {
+    font-weight: bold;
+    color: #a5e7df;
+}
+
+/* End Footer */
+
+/* Controls and lightweight artwork for the sample site */
+:focus-visible {
+    outline: 3px solid #08796e;
+    outline-offset: 4px;
+}
+
+.primary-link,
+.portfolio-controls button {
+    display: inline-block;
+    border: 1px solid var(--main-color);
+    border-radius: 6px;
+    padding: 10px 16px;
+    font: inherit;
+    font-weight: 700;
+}
+
+.primary-link,
+.portfolio-controls button[aria-pressed="true"] {
+    background-color: var(--main-color);
+    color: white;
+    text-decoration: none;
+}
+
+.portfolio-controls {
+    margin-top: 32px;
+    text-align: center;
+}
+
+.portfolio-controls button {
+    margin: 4px;
+    background-color: white;
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.portfolio-controls + .portfolio-content {
+    margin-top: 32px;
+}
+
+.features .feat i,
+.services .services-content .srv i {
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.visual {
+    display: grid;
+    place-items: center;
+    min-height: 165px;
+    padding: 16px;
+    background: linear-gradient(135deg, #173c48, #08796e);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.visual-2 {
+    background: linear-gradient(135deg, #473c2b, #6a5138);
+}
+
+.visual-3 {
+    background: linear-gradient(135deg, #303a65, #4e527a);
+}
+
+.image .visual {
+    min-height: 280px;
+}
+
+.about .image .visual {
+    height: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
